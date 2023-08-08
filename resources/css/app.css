@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.hero-bg-image{
+    background: url('https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-4.0.3&q') no-repeat center center /cover;
+    background-attachment: fixed;
+    height: 600px;
+}
