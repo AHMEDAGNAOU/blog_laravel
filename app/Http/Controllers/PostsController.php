@@ -52,24 +52,45 @@ class PostsController extends Controller
     
     public function show($slug)
     {
-        return view('blog.show');
+        return view('blog.show') -> with('post', Post::where('slug', $slug)->first());
+
     }
 
     
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        return view('blog.edit') -> with('post', Post::where('slug', $slug)->first());
     }
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $request ->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:svg,png,jpg|max:5048',
+        ]);
+
+        $newImageName = uniqid() . '-' . $slug . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImageName);
+
+        Post::where('slug', $slug)->update([
+            'slug' => $slug,
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'image_path' => $newImageName,
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect('/blog/' . $slug)->with('message', 'The subject has been modified');
     }
 
    
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        Post::where('slug', $slug)->delete();
+
+        return redirect('/blog')->with('message', 'The subject has been delete');
+
     }
 }
