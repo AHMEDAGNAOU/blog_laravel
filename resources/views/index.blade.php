@@ -46,10 +46,10 @@
                 <h2 class="text-2xl text-gray-100">Blog Categories</h2>
                 <div>
                     <ul class="flex flex-col leading-loose pt-10 text-center gap-7 space-y-6 text-gray-100 sm:flex-row sm:flex-wrap sm:space-x-8 sm:space-y-0 l">
-                        <li class="no-underline hover:underline font-bold text-2xl py-2 text-sm" title="Design"> UX Design Thinking </li>
-                        <li class="no-underline hover:underline font-bold text-2xl py-2 text-sm" title="Programming">Programming Languages </li>
-                        <li class="no-underline hover:underline font-bold text-2xl py-2 text-sm" title="Graphic">Graphic Design </li>
-                        <li class="no-underline hover:underline font-bold text-2xl py-2 text-sm" title="Development">Front-End Development</li>
+                        <li class="no-underline hover:underline font-bold text-2xl py-2" title="Design"> UX Design Thinking </li>
+                        <li class="no-underline hover:underline font-bold text-2xl py-2" title="Programming">Programming Languages </li>
+                        <li class="no-underline hover:underline font-bold text-2xl py-2" title="Graphic">Graphic Design </li>
+                        <li class="no-underline hover:underline font-bold text-2xl py-2" title="Development">Front-End Development</li>
                     </ul>
                 </div>  
             </div>
